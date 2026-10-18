@@ -1,161 +1,361 @@
-<!DOCTYPE HTML>
-
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Rishi's Portfolio - About</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<style>
-	    #body {
-            background-color: #f5f5f5;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rishi Singh Parihar | Operations Technology &amp; Automation</title>
+<meta name="description" content="Rishi Singh Parihar, Assistant Manager, Distribution & Operations at Atica Global, Pune. Builds n8n automations, internal tools and SQL/Metabase dashboards for hotel sales operations.">
+<meta property="og:title" content="Rishi Singh Parihar | Operations Technology & Automation">
+<meta property="og:description" content="I build the tools my operations team runs on: n8n automations, internal tools and Metabase dashboards.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rishisinghparihar07.github.io/portfolio.io/">
+<meta property="og:image" content="https://rishisinghparihar07.github.io/portfolio.io/images/image-modified.jpg">
+<link rel="icon" href="images/image-modified.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F6F9;
+    --surface: #FFFFFF;
+    --ink: #172033;
+    --muted: #586274;
+    --line: #D9DEE6;
+    --navy: #13294B;
+    --navy-2: #1F3A5F;
+    --navy-ink: #C9D4E5;
+    --live: #1C8A5E;
+    --live-bg: #E3F3EB;
+    --handed: #8A5A12;
+    --handed-bg: #FBEFD9;
+    --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: var(--navy-2); }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid #6FA8FF; outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: #fff; padding: 8px 12px; z-index: 10; }
+  .skip:focus { left: 8px; }
 
-		#main {
-				padding: 40px;
-			}
+  /* ---------- Hero band ---------- */
+  .band { background: var(--navy); color: #fff; }
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; gap: 16px; flex-wrap: wrap; }
+  .who { font: 700 17px/1.2 var(--display); color: #fff; text-decoration: none; }
+  .top nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .top nav a { color: var(--navy-ink); text-decoration: none; font-size: 15px; }
+  .top nav a:hover { color: #fff; }
 
-        #intro {
-            background-color: #333;
-            color: #fff;
-            padding: 40px;
-            text-align: center;
-        }
+  .hero { padding: 48px 0 84px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .face { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+  .face img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,.25); }
+  .face span { font-size: 15px; color: var(--navy-ink); line-height: 1.4; }
+  .face b { display: block; color: #fff; font-weight: 600; }
+  h1 { font: 800 clamp(40px, 5.6vw, 64px)/1.02 var(--display); letter-spacing: -0.03em; margin: 0 0 22px; }
+  .lede { font-size: 18px; color: var(--navy-ink); max-width: 33em; margin: 0 0 32px; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid currentColor; }
+  .band .btn.primary { background: #fff; color: var(--navy); border-color: #fff; }
+  .band .btn.quiet { color: #fff; }
+  .btn.primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .btn.quiet { color: var(--navy); background: transparent; }
+  .btn:hover { filter: brightness(1.08); }
 
-        #intro h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+  /* Workflow trace: the one moving piece on the page */
+  .trace { margin: 0; background: var(--surface); color: var(--ink); border-radius: 16px; padding: 26px 26px 22px; box-shadow: 0 24px 48px -24px rgba(0, 0, 0, .45); }
+  .trace-title { font-size: 14px; color: var(--muted); margin: 0 0 18px; }
+  .track { position: relative; }
+  .track::before { content: ""; position: absolute; left: 11px; top: 14px; bottom: 14px; width: 2px; background: var(--line); }
+  .steps { list-style: none; margin: 0; padding: 0; }
+  .pulse { position: absolute; z-index: 1; left: 6px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 5px var(--live-bg); }
+  .step { position: relative; padding: 0 0 18px 40px; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before { content: ""; position: absolute; left: 4px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--surface); border: 2px solid var(--line); transition: border-color .3s, background .3s; }
+  .step.on::before { border-color: var(--live); background: var(--live-bg); }
+  .step b { display: block; font: 600 16px/1.35 var(--display); }
+  .step span { font-size: 14px; color: var(--muted); }
+  .alert { margin-top: 20px; border-left: 3px solid var(--navy-2); background: var(--paper); padding: 12px 14px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.5; opacity: 0; transform: translateY(6px); transition: opacity .4s, transform .4s; }
+  .alert.show { opacity: 1; transform: none; }
 
-        #intro p {
-            font-size: 18px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
+  /* ---------- Sections ---------- */
+  section { padding: 80px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  h2 { font: 700 clamp(28px, 3.4vw, 38px)/1.12 var(--display); letter-spacing: -0.02em; margin: 0 0 10px; }
+  .intro { color: var(--muted); max-width: 40em; margin: 0 0 44px; }
 
-        #profile-image {
-            max-width: 200px;
-            display: block;
-            margin: 40px auto;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
+  /* Tools: a real chronology, so a dated rail */
+  .tools { position: relative; }
+  .tool { display: grid; grid-template-columns: 150px 1fr; gap: 36px; padding-bottom: 52px; position: relative; }
+  .tool:last-child { padding-bottom: 0; }
+  .when { font: 700 16px/1.3 var(--display); }
+  .status { display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+  .status.live { color: var(--live); background: var(--live-bg); }
+  .status.handed { color: var(--handed); background: var(--handed-bg); }
+  .body { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px 30px; }
+  .tool h3 { font: 700 23px/1.25 var(--display); margin: 0 0 10px; letter-spacing: -0.01em; }
+  .tool p { margin: 0 0 18px; max-width: 46em; }
 
-        .post.featured {
-            background-color: #fff;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
+  .flow { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; margin: 0 0 22px; padding: 0; }
+  .flow li { font-size: 14px; font-weight: 500; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; }
+  .flow li + li { margin-left: 22px; position: relative; }
+  .flow li + li::before { content: ""; position: absolute; left: -18px; top: 50%; width: 12px; height: 2px; background: var(--navy-2); }
+  .flow li + li::after { content: ""; position: absolute; left: -9px; top: calc(50% - 4px); border: 5px solid transparent; border-left-color: var(--navy-2); border-right: 0; }
 
-        .post.featured header.major h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+  .result { display: flex; flex-wrap: wrap; gap: 14px 36px; margin: 0 0 16px; padding: 18px 0 0; list-style: none; border-top: 1px solid var(--line); }
+  .result li { font-size: 14px; color: var(--muted); }
+  .result strong { font: 800 24px/1.15 var(--display); color: var(--navy-2); display: block; letter-spacing: -0.01em; }
+  .stack { font-size: 14px; color: var(--muted); margin: 0; }
 
-        .post.featured header.major p {
-            font-size: 16px;
-            color: #666;
-        }
+  /* Career ladder */
+  .ladder { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .ladder li { padding: 20px 22px 0 0; border-top: 4px solid var(--line); position: relative; }
+  .ladder li::before { content: ""; position: absolute; top: -9px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 3px solid var(--line); }
+  .ladder li.now { border-top-color: var(--navy-2); }
+  .ladder li.now::before { border-color: var(--navy-2); background: var(--navy-2); }
+  .ladder .d { font-size: 14px; color: var(--muted); }
+  .ladder b { display: block; font: 700 18px/1.3 var(--display); margin: 4px 0 8px; }
+  .ladder p { margin: 0; font-size: 15px; color: var(--muted); }
 
-        #footer {
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 56px; }
+  .grid2 h3 { font: 700 17px/1.3 var(--display); margin: 0 0 6px; }
+  .grid2 p { margin: 0; color: var(--muted); }
 
-        #copyright {
-            background-color: #222;
-            color: #999;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+  .note { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; }
+  .note h3 { font: 700 20px/1.3 var(--display); margin: 0 0 6px; }
+  .note p { margin: 0; color: var(--muted); }
+  .note.award { border-left: 4px solid var(--handed); }
 
+  .contact { background: var(--navy); color: #fff; }
+  .contact h2 { color: #fff; }
+  .contact .intro { color: var(--navy-ink); }
+  .contact .btn.primary { background: #fff; color: var(--navy); border-color: #fff; }
+  .contact .btn.quiet { color: #fff; }
+  .fine { margin: 56px 0 0; font-size: 13px; color: var(--navy-ink); }
+
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; gap: 44px; padding-top: 28px; }
+    .tool { grid-template-columns: 1fr; gap: 12px; }
+    .ladder { grid-template-columns: 1fr 1fr; row-gap: 30px; }
+    .grid2 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .ladder { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .body { padding: 22px 20px; }
+    .top nav { gap: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .alert, .step::before { transition: none; }
+  }
+</style>
 </head>
-<body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper" class="fade-in">
-        <!-- Intro -->
-        <div id="intro">
-			<img id="profile-image" src="images/image-modified.jpg" alt="Profile Image">
-            <h1>RISHI'S PORTFOLIO</h1>
-            <p>Driven business professional with a bachelor’s degree in Business Administration (Information Technology), currently working as a Distribution & Operations Executive. Experienced in managing US hotels operational sales processes, lead pipelines, CRM updates, and RFP workflows with accuracy and efficiency. Strongly interested in using technology and AI to automate workflows, reduce manual effort, and build smarter business systems.</p>
-            <ul class="actions">
-                <li><a href="Rishi_Resume_final 1.pdf" download class="button icon solid fa-file-pdf"> Download CV</a></li>
-            </ul>
+<body>
+<a class="skip" href="#tools">Skip to the tools</a>
+
+<div class="band">
+  <div class="wrap">
+    <header class="top">
+      <a class="who" href="./">Rishi Singh Parihar</a>
+      <nav aria-label="Sections">
+        <a href="#tools">Tools I've built</a>
+        <a href="#career">Career</a>
+        <a href="#skills">Skills</a>
+        <a href="Contact%20Me.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <div class="face">
+          <img src="images/image-modified.jpg" alt="Portrait of Rishi Singh Parihar" width="64" height="64">
+          <span><b>Assistant Manager, Distribution &amp; Operations</b>Atica Global, Pune</span>
         </div>
-
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">Education</a>
-        </header>
-
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-                <li class="active"><a href="index.html">Education</a></li>
-                <li><a href="generic.html">Experience</a></li>
-                <li><a href="elements.html">Projects</a></li>
-                <li><a href="Skills.html">Skills</a></li>
-                <li><a href="Contact Me.html">Contact</a></li>
-            </ul>
-            <ul class="icons">
-                <li><a href="https://twitter.com/rishisingh746" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="https://www.linkedin.com/in/rishi-singh-parihar-9b00041a3" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-            </ul>
-        </nav>
-
-        <!-- Main -->
-        <div id="main">
-            
-            <!-- Featured Post -->
-            <article class="post featured">
-                <header class="major">
-                    <span class="date">2021-2024</span>
-                    <h3><a href="#">BBA - (INFORMTION TECHNOLOGY)</a></h3>
-                    <p>LOVELY PROFESSIONAL UNIVERSITY</p>
-                    <p>CGPA - 6.84 </p>
-                </header>
-                <header class="major">
-                    <span class="date">2019-2020</span>
-                    <h3><a href="#">HIGHER SECONDARY EDUCATION - (CBSE)</a></h3>
-                    <p>SHRI GANESH SENIOR SECONDARY SECHOOL</p>
-                    <p>PERCENTAGE - 61.26%</p>
-                </header>
-            </article>
+        <h1>I build the tools my operations team runs on.</h1>
+        <p class="lede">I manage a team of seven handling sales operations for US hotels, and I build the n8n automations, internal tools and Metabase dashboards that take manual work off their plate.</p>
+        <div class="actions">
+          <a class="btn primary" href="Rishi_Singh_Parihar_Resume.pdf" download>Download resume</a>
+          <a class="btn quiet" href="https://www.linkedin.com/in/rishi-singh-parihar-9b00041a3/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+      </div>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <section>
-                <form method="post" action="#">
-                    <div class="fields">
-                        <div class="field">
-                        </div>
-                    </div>
-                </form>
-            </section>
-        </footer>
-
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul>
-                <li>&copy; 2025 Portfolio </li>
-                <li>Designed By: <a href="https://www.linkedin.com/in/rishi-singh-parihar-9b00041a3">Rishi Singh Parihar</a></li>
-            </ul>
+      <figure class="trace" aria-label="How the email RFP automation handles an inbound client email">
+        <p class="trace-title">What happens when a client email arrives</p>
+        <div class="track">
+          <span class="pulse" aria-hidden="true"></span>
+          <ol class="steps">
+            <li class="step"><b>Email lands in the inbox</b><span>Picked up automatically by an n8n workflow</span></li>
+            <li class="step"><b>Sorted: RFP or not</b><span>Actionable requests get an urgency and response window</span></li>
+            <li class="step"><b>Salesforce task created</b><span>Linked to the property and its owner</span></li>
+            <li class="step"><b>Associate alerted on Slack</b><span>With the email link and the task, ready to act</span></li>
+          </ol>
         </div>
+        <div class="alert" role="status"><strong>Urgency: Highest.</strong> Respond within 2 hours. Salesforce task created and the assigned associate tagged.</div>
+      </figure>
     </div>
+  </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+<main class="wrap">
+  <section id="tools">
+    <h2>Tools I've built</h2>
+    <p class="intro">Each one started as a problem my team ran into every day. All of them are running in production or have been handed to the Tech team to build on.</p>
+
+    <div class="tools">
+      <article class="tool">
+        <div><div class="when">Oct 2025</div><span class="status live">Live</span></div>
+        <div class="body">
+          <h3>Email RFP alert automation</h3>
+          <p>Inbound client emails used to be checked by hand, and missed emails were a regular cause of escalations. The workflow now reads every inbound email, separates actionable RFPs from everything else, creates the Salesforce task and alerts the right associate on Slack. I built and tested it in two months; the first version ran on a Google Sheets tracker before moving to Salesforce and Slack.</p>
+          <ul class="flow" aria-label="How it works">
+            <li>Inbound email</li><li>RFP or not</li><li>Salesforce task</li><li>Slack alert</li>
+          </ul>
+          <ul class="result">
+            <li><strong>30% to 2–5%</strong>missed-email escalations</li>
+            <li><strong>20+</strong>associates using it daily</li>
+          </ul>
+          <p class="stack">n8n, Salesforce, Slack, Google Sheets</p>
+        </div>
+      </article>
+
+      <article class="tool">
+        <div><div class="when">Feb 2026</div><span class="status live">Live</span></div>
+        <div class="body">
+          <h3>Lead generation and contact enrichment</h3>
+          <p>Finding group-business prospects around a hotel meant searching Google one business at a time. Now you pick a property, a radius and an industry, and the tool pulls matching local businesses through the Google Maps API. A second workflow visits their websites, collects public emails, phone numbers and addresses into a tracking sheet, and posts on Slack when the run is done. I worked directly with the CTO to get the API and scraping access it needed.</p>
+          <ul class="flow" aria-label="How it works">
+            <li>Property, radius, industry</li><li>Google Maps search</li><li>Website scraping</li><li>Tracking sheet</li>
+          </ul>
+          <ul class="result">
+            <li><strong>Sales and Ops</strong>teams prospecting with it</li>
+            <li><strong>Since Feb 2026</strong>running in production</li>
+          </ul>
+          <p class="stack">Appsmith, Google Maps API, web scraping, Slack</p>
+        </div>
+      </article>
+
+      <article class="tool">
+        <div><div class="when">Apr 2026</div><span class="status handed">Handed to Tech</span></div>
+        <div class="body">
+          <h3>Group Pricing Calculator</h3>
+          <p>A decision-support model that recommends group rates for requested stay dates. I built it in Excel between February and April 2026 with the Revenue team and senior management, using five years of hotel occupancy, ADR, STR and comp-set data. After the pilot and a round of feedback, it went to the Tech team to become an internal tool.</p>
+          <ul class="flow" aria-label="How it works">
+            <li>5 years of hotel data</li><li>Rate model</li><li>Group rate recommendation</li>
+          </ul>
+          <ul class="result">
+            <li><strong>90%+</strong>rate accuracy during the pilot</li>
+            <li><strong>5 years</strong>of historical data</li>
+          </ul>
+          <p class="stack">Excel, revenue analytics</p>
+        </div>
+      </article>
+
+      <article class="tool">
+        <div><div class="when">May 2026</div><span class="status live">Live</span></div>
+        <div class="body">
+          <h3>Channel activation automation</h3>
+          <p>Channel onboarding emails went out manually and there was no tracker: the only way to know whether emails and follow-ups had gone out was to ask each associate. Now one form starts it. The workflow drafts channel-specific emails with AI, sends them to up to 10 channels, logs every send and follow-up, and tags the owners on Slack with the follow-up schedule. Built and launched within a month.</p>
+          <ul class="flow" aria-label="How it works">
+            <li>One form</li><li>AI-drafted emails</li><li>Up to 10 channels</li><li>Logged and tracked</li>
+          </ul>
+          <ul class="result">
+            <li><strong>10–15 to 2–3 days</strong>to activate a property</li>
+            <li><strong>Under 6 min</strong>for every channel email to go out</li>
+          </ul>
+          <p class="stack">n8n, AI-assisted drafting, APIs, Slack, Google Sheets</p>
+        </div>
+      </article>
+
+      <article class="tool">
+        <div><div class="when">2026</div><span class="status live">In use</span></div>
+        <div class="body">
+          <h3>Operations dashboards</h3>
+          <p>I taught myself SQL and Metabase to give the team visibility it didn't have: SLA and task management dashboards, turnaround trackers by associate, month and channel, and an exception tracker that joins three data sources to flag missing Salesforce booking data until it is fixed.</p>
+          <ul class="flow" aria-label="How it works">
+            <li>Salesforce data</li><li>SQL</li><li>Metabase dashboards</li>
+          </ul>
+          <p class="stack">SQL (PostgreSQL), Metabase</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="career">
+    <h2>Career</h2>
+    <p class="intro">Two years at Atica Global, from running RFPs for six hotels to managing a team and building its tools.</p>
+    <ol class="ladder">
+      <li><span class="d">Jul – Sep 2024</span><b>Sales &amp; Operations Intern</b><p>Lead mining, CRM updates and RFP submissions for 6 hotels.</p></li>
+      <li><span class="d">Oct 2024 – Jun 2025</span><b>Distribution &amp; Operations Executive</b><p>25+ properties and $650,000+ in revenue supported. Led a pod that cut turnaround from 18 to 4 hours.</p></li>
+      <li><span class="d">Jul – Dec 2025</span><b>Senior Operations Analyst</b><p>Marriott and Hilton properties with zero escalations. Shipped the first production automation.</p></li>
+      <li class="now"><span class="d">Jan 2026 – present</span><b>Assistant Manager, D&amp;O</b><p>Seven direct reports, Operations-side UAT for Product and Tech, and three more tools shipped.</p></li>
+    </ol>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="intro">What I use day to day.</p>
+    <div class="grid2">
+      <div><h3>Automation and tools</h3><p>n8n, Appsmith, REST APIs, Google Maps API, AI-assisted workflows, web scraping, Replit</p></div>
+      <div><h3>Data and analytics</h3><p>SQL (PostgreSQL), Metabase, Excel, Google Sheets, dashboards, KPI and SLA tracking</p></div>
+      <div><h3>Business systems</h3><p>Salesforce, Jira Service Management, Slack, LeadSquared, Lemlist, ZoomInfo</p></div>
+      <div><h3>Product and operations</h3><p>UAT, requirements gathering, workflow design, SLA and turnaround management, people management</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="note award">
+        <h3>Trailblazer Award, Dec 2025</h3>
+        <p>From Atica Global's CTO, for being the first person in Sales &amp; Operations to build production automation tools: the email RFP alerts and the lead generation tool.</p>
+      </div>
+      <div class="note">
+        <h3>BBA, Information Technology</h3>
+        <p>Lovely Professional University, 2021 – 2024. CGPA 6.84/10.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="contact">
+  <div class="wrap">
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p class="intro">Email is the fastest way to reach me, or send a message from the contact page.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:rishisinghparihar5@gmail.com">Email me</a>
+      <a class="btn quiet" href="Contact%20Me.html">Send a message</a>
+      <a class="btn quiet" href="https://www.linkedin.com/in/rishi-singh-parihar-9b00041a3/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="fine">© 2026 Rishi Singh Parihar. Pune, India.</p>
+  </section>
+  </div>
+</div>
+
+<script>
+  // One load-time moment: trace a client email through the workflow once.
+  (function () {
+    var steps = document.querySelectorAll('.step');
+    var pulse = document.querySelector('.pulse');
+    var alertBox = document.querySelector('.alert');
+    if (!steps.length || !pulse) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function place(i) { pulse.style.top = (steps[i].offsetTop + 8) + 'px'; steps[i].classList.add('on'); }
+    if (reduce) {
+      for (var k = 0; k < steps.length; k++) steps[k].classList.add('on');
+      place(steps.length - 1); alertBox.classList.add('show'); return;
+    }
+    pulse.style.transition = 'top .55s ease-in-out';
+    var i = 0; place(0);
+    var t = setInterval(function () {
+      i++;
+      if (i >= steps.length) { clearInterval(t); alertBox.classList.add('show'); return; }
+      place(i);
+    }, 750);
+  })();
+</script>
 </body>
 </html>
