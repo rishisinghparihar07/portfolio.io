@@ -109,6 +109,13 @@
   .result strong { font: 800 24px/1.15 var(--display); color: var(--navy-2); display: block; letter-spacing: -0.01em; }
   .stack { font-size: 14px; color: var(--muted); margin: 0; }
 
+
+  .dash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 22px; }
+  .dash-grid > div { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .dash-grid h4 { font: 700 15px/1.3 var(--display); margin: 0 0 4px; }
+  .dash-grid p { font-size: 14px; color: var(--muted); margin: 0; }
+  @media (max-width: 520px) { .dash-grid { grid-template-columns: 1fr; } }
+
   /* Career ladder */
   .ladder { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
   .ladder li { padding: 20px 22px 0 0; border-top: 4px solid var(--line); position: relative; }
@@ -288,12 +295,23 @@
       <article class="tool">
         <div><div class="when">2026</div><span class="status live">In use</span></div>
         <div class="body">
-          <h3>Operations dashboards</h3>
-          <p>I taught myself SQL and Metabase to give the team visibility it didn't have: SLA and task management dashboards, turnaround trackers by associate, month and channel, and an exception tracker that joins three data sources to flag missing Salesforce booking data until it is fixed.</p>
+          <h3>Operations analytics dashboards</h3>
+          <p>The Operations team had no reporting: to know what was open, late or overloaded, someone had to ask. I taught myself SQL and Metabase and built four dashboards that now give managers and associates that view every day. Underneath them is one SQL model that unifies Salesforce tasks and Jira tickets and measures every item against a 4 working-hour SLA.</p>
           <ul class="flow" aria-label="How it works">
-            <li>Salesforce data</li><li>SQL</li><li>Metabase dashboards</li>
+            <li>Salesforce + Jira data</li><li>Unified SQL model</li><li>Working-hours SLA</li><li>Metabase dashboards</li>
           </ul>
-          <p class="stack">SQL (PostgreSQL), Metabase</p>
+          <div class="dash-grid">
+            <div><h4>Operations performance</h4><p>RFP and ticket volumes by channel, property and day, with average and median turnaround by associate and task type.</p></div>
+            <div><h4>Unified task tracker</h4><p>Every open, pending and completed task the team owns, week over week and month over month, in one place.</p></div>
+            <div><h4>SLA, ageing and breaches</h4><p>Share of work done within SLA overall and by source, how long open items have waited, and which ones have breached.</p></div>
+            <div><h4>Pricing request lifecycle</h4><p>Matches each group pricing request to its Salesforce opportunity and splits turnaround across Sales Ops, Revenue and post-revenue stages.</p></div>
+          </div>
+          <ul class="result">
+            <li><strong>4</strong>dashboards</li>
+            <li><strong>150+</strong>charts and tables</li>
+            <li><strong>2 systems</strong>Salesforce and Jira in one model</li>
+          </ul>
+          <p class="stack">SQL (PostgreSQL), Metabase, Salesforce data, Jira data</p>
         </div>
       </article>
     </div>
