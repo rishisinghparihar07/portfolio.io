@@ -93,6 +93,7 @@
   .status { display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
   .status.live { color: var(--live); background: var(--live-bg); }
   .status.handed { color: var(--handed); background: var(--handed-bg); }
+  .status.team { color: var(--navy-2); background: #E3EAF4; margin-left: 6px; }
   .body { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px 30px; }
   .tool h3 { font: 700 23px/1.25 var(--display); margin: 0 0 10px; letter-spacing: -0.01em; }
   .tool p { margin: 0 0 18px; max-width: 46em; }
@@ -203,7 +204,7 @@
 <main class="wrap">
   <section id="tools">
     <h2>Tools I've built</h2>
-    <p class="intro">Each one started as a problem my team ran into every day. All of them are running in production or have been handed to the Tech team to build on.</p>
+    <p class="intro">Each one started as a problem my team ran into every day. Five I built myself; SARAH I helped shape as the Operations member of a cross-functional team. All are running in production or have been handed to the Tech team.</p>
 
     <div class="tools">
       <article class="tool">
@@ -223,18 +224,34 @@
       </article>
 
       <article class="tool">
+        <div><div class="when">Nov 2025</div><span class="status live">Live</span><span class="status team">Core team</span></div>
+        <div class="body">
+          <h3>SARAH: automated RFP submission</h3>
+          <p>HotelPlanner RFPs used to be found and submitted by hand, and average turnaround ran past 24 hours. SARAH is an n8n product built by the Tech team with Revenue, Sales and Operations. It signs in to the HotelPlanner portal for each property, finds new RFPs with Hyperbrowser, gets the rate from the pricing model or alerts a Revenue associate, submits the proposal to match the guest's request, and emails the stakeholders. I was the Operations core member: I wrote the BRDs, mapped how each RFP is submitted today, and supplied the data the automation needed.</p>
+          <ul class="flow" aria-label="How it works">
+            <li>New RFP found</li><li>Rate from model or Revenue</li><li>Proposal submitted</li><li>Stakeholders emailed</li>
+          </ul>
+          <ul class="result">
+            <li><strong>24+ to 2–4 hours</strong>RFP turnaround</li>
+            <li><strong>200+</strong>properties live</li>
+          </ul>
+          <p class="stack">n8n, Hyperbrowser, PostgreSQL, Metabase, Excel</p>
+        </div>
+      </article>
+
+      <article class="tool">
         <div><div class="when">Feb 2026</div><span class="status live">Live</span></div>
         <div class="body">
           <h3>Lead generation and contact enrichment</h3>
-          <p>Finding group-business prospects around a hotel meant searching Google one business at a time. Now you pick a property, a radius and an industry, and the tool pulls matching local businesses through the Google Maps API. A second workflow visits their websites, collects public emails, phone numbers and addresses into a tracking sheet, and posts on Slack when the run is done. I worked directly with the CTO to get the API and scraping access it needed.</p>
+          <p>Finding group-business prospects around a hotel meant searching Google one business at a time. Now you pick a property, a radius and an industry in an Appsmith app, and it pulls matching local businesses through the Google Maps API. The real work happens in an n8n backend I built: a form kicks off a contact-scraping workflow that crawls each business website with Hyperbrowser, parses emails, phone numbers and addresses with JavaScript, writes them to a tracking sheet, and posts on Slack when the run finishes or a site can't be reached. I worked directly with the CTO to get the API and scraping access it needed.</p>
           <ul class="flow" aria-label="How it works">
-            <li>Property, radius, industry</li><li>Google Maps search</li><li>Website scraping</li><li>Tracking sheet</li>
+            <li>Property, radius, industry</li><li>Google Maps search</li><li>n8n + Hyperbrowser crawl</li><li>Tracking sheet</li>
           </ul>
           <ul class="result">
             <li><strong>Sales and Ops</strong>teams prospecting with it</li>
             <li><strong>Since Feb 2026</strong>running in production</li>
           </ul>
-          <p class="stack">Appsmith, Google Maps API, web scraping, Slack</p>
+          <p class="stack">n8n, Hyperbrowser, JavaScript, Appsmith, Google Maps API, Google Sheets, Slack</p>
         </div>
       </article>
 
@@ -290,7 +307,7 @@
     <ol class="ladder">
       <li><span class="d">Jul – Sep 2024</span><b>Sales &amp; Operations Intern</b><p>Lead mining, CRM updates and RFP submissions for 6 hotels.</p></li>
       <li><span class="d">Oct 2024 – Jun 2025</span><b>Distribution &amp; Operations Executive</b><p>25+ properties and $650,000+ in revenue supported. Led a pod that cut turnaround from 18 to 4 hours.</p></li>
-      <li><span class="d">Jul – Dec 2025</span><b>Senior Operations Analyst</b><p>Marriott and Hilton properties with zero escalations. Shipped the first production automation.</p></li>
+      <li><span class="d">Jul – Dec 2025</span><b>Senior Operations Analyst</b><p>Marriott and Hilton properties with zero escalations. Shipped the first production automation and joined the SARAH core team.</p></li>
       <li class="now"><span class="d">Jan 2026 – present</span><b>Assistant Manager, D&amp;O</b><p>Seven direct reports, Operations-side UAT for Product and Tech, and three more tools shipped.</p></li>
     </ol>
   </section>
